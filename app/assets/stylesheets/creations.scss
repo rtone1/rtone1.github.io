@@ -1,0 +1,95 @@
+
+body{
+  background-color: lightgray;
+  margin: 0px;
+}
+h1,h2,h3,h4,h5,h6,p{
+  margin: 0px;
+  padding: 0px;
+}
+// end of normalize
+
+header{
+  width: 100%;
+  height: 60px;
+  background-color: rgb(82,186,213);
+  border-bottom: 1px solid rgb(41, 135, 160);
+  font-family: 'Lato', sans-serif;
+  color: white;
+  h1{
+    display: inline-block;
+    font-weight: 300;
+    line-height: 60px;
+    font-size: 46px;
+    margin: 0px 10px 0px;
+  }
+}
+nav{
+  height: 60px;
+  float: right;
+  a{
+    text-decoration: none;
+    color: white;
+  }
+
+ul{
+  padding: 5px 0px;
+  margin-right: 25px;
+}
+li{
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 10px;
+}
+}// end on navbar
+
+// responsive queries start below
+
+@media (max-width: 700px){
+
+  ul{
+    display: none;
+  }
+  span{
+    display: none;
+  }
+  .hamIcon{
+    width: 50px;
+    height: 40px;
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    float: right;
+    background-image: url('ham.png');
+    background-size: cover;
+    background-position: center;
+  }
+  nav{
+    width: 100%;
+    font-family: 'Lato', sans-serif;
+    ul{
+      margin: 0px;
+      padding: 0px;
+      background-color: rgb(98, 110, 123);
+    }
+    li{
+      line-height: 105px;
+      font-size: 30px;
+      font-weight: 300;
+      display: block;
+      margin: 0px;
+      padding: 0px 10px 0px;
+      border-bottom: 1px solid rgb(152, 155, 164);
+    }
+    a{
+      text-decoration: none;
+      color: white;
+    }
+    li:hover,
+    li:focus{
+      background-color: #6F7B88;
+    }
+  }// end of responsiveNavbar
+
+}
