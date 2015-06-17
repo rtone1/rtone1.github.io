@@ -48,10 +48,11 @@ li{
 }
 }// end on navbar
 
+// aboutME section ===========================================================
 .content{
   width: 100%;
 }
-.container1{
+#container1{
   width: 100%;
   height: 600px;
   background-image: url('http://upload.wikimedia.org/wikipedia/commons/2/26/City_of_Chicago_from_Adler_Planetarium.jpg');
@@ -62,10 +63,12 @@ li{
   color: white;
   font-size: 32px;
 }
+
 .aboutME{
   width: 60%;
   height: 100%;
 h1, h2, p{
+  font-family: 'Lato', sans-serif;
   position: relative;
   text-shadow: 1px 1px 5px black;
 }
@@ -90,15 +93,141 @@ p{
   animation-duration: 4s;
 }
 }
-.container2{
+.guideTo{
   width: 100%;
-  height: 900px;
+  margin: 0px auto;
+  position: absolute;
+  bottom: 45px;
+  text-align: center;
+}
+//work data ==================================================
+#container3{
+  width: 100%;
+  height: 400px;
+  background-color: gray;
   position: relative;
   top: 60px;
-  background-color: blue;
+}
+//Developer work ===============================================================
+.content2{
+  width: 100%;
+  position: relative;
+  top: -275px;
+  z-index: -10;
+}
+#development{
+  width: 100%;
+  height: 700px;
+  background-color: lightgray;
+  h1{
+    position: relative;
+    top: 20px;
+  }
+}
+//Design work ==================================================================
+#graphics{
+  width: 100%;
+  height: 700px;
+  background-color: gray;
+
+}
+.desingImage{
+
+}
+//contact me section ===========================================================
+#container2{
+  width: 100%;
+  height: 600px;
+  position: relative;
+  top: -200px;
+  overflow: hidden;
 }
 .contact{
   width: 50%;
+  height: 500px;
+  float: left;
+  margin-top: 100px;
+  position: absolute;
+  font-family: 'Lato', sans-serif;
+  h3{
+    margin: 20px 0px 10px;
+    text-align: center;
+    font-size: 32px;
+  }
+  hr{
+    width: 90%;
+    margin-bottom: 20px;
+  }
+}
+.contactForm{
+  width: 80%;
+  margin: 20px auto;
+}
+input[type=text],
+input[type=email],
+input[type=phone],{
+  width: 250px;
+  height: 40px;
+  padding: 10px;
+  margin: 0px 0px 10px 5px;
+  border: 1px solid rgb(120, 137, 147);
+  border-radius: 4px;
+  font-size: 22px;
+  box-sizing: border-box;
+}
+textarea{
+  width: 100%;
+  height: 200px;
+  padding: 10px;
+  margin: 0px 0px 10px 5px;
+  border: 1px solid #788993;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+input[type=submit]{
+  width: 100px;
+  height: 35px;
+  margin: 0px 0px 0px 5px;
+  background-color: rgba(0, 157, 138, .0);
+  border: 1px solid rgb(120, 137, 147);
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+input[type=text]:focus,
+input[type=text]:active{
+outline: 0;
+border: 1px solid #93B7CC;
+}
+input[type=submit]:focus,
+input[type=submit]:active{
+outline: 0;
+border: 1px solid #93B7CC;
+}
+
+.myImage{
+  width: 50%;
+  float: left;
+  overflow: hidden;
+}
+.me{
+  width: 400px;
+  height: 400px;
+  background-image: url('me.png');
+  background-size: cover;
+  border-radius: 200px;
+  margin-top: 105px;
+  position: absolute;
+  right: 130px;
+  top: 40px;
+  z-index: 10;
+}
+// footer start=================================================================
+footer{
+  width: 100%;
+  height: 215px;
+  background-color: gray;
 
 }
 // responsive queries start below===============================================
@@ -119,7 +248,7 @@ p{
     top: 10px;
     right: 20px;
     float: right;
-    background-image: url('ham.png');
+    background-image: url('hambuger.png');
     background-size: cover;
     background-position: center;
   }
@@ -159,6 +288,21 @@ p{
 
   .container1{
     height: 400px;
+  }
+  .me{
+    width: 130px;
+    height: 130px;
+    margin: 10px;
+    right: 118px;
+    top: 0px;
+    z-index: 10;
+  }
+  .contact {
+    width: 97%;
+    top: 30px;
+  }
+  .contactForm {
+    width: 95%;
   }
 
 }
