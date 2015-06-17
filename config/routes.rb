@@ -1,7 +1,17 @@
 Rails.application.routes.draw do
 
+  # main page route =================================
   root 'creations#index'
+  resource :messages
+  # profile page routes =============================
+  get '/profile' => 'users#profile'
+  get '/messages' => 'messages#index'
+  post '/api/message' => 'messages#createapi'
+  delete '/message-delete/:id' => 'messages#destroy'
 
+  # session log-in and log-out routes================
+  post '/session_log_in' => 'sessions#log_in_behavior'
+  delete '/session_log_out' => 'sessions#log_out_behavior'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

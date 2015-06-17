@@ -1,16 +1,11 @@
 class UsersController < ApplicationController
 
-  def index
-    @user = User.all
+  def profile
+    @users = User.all
+    @user = current_user
+    @messages = Message.all
   end
 
-  def new
-
-  end
-  def create
-
-  end
-  
   private
 
   def user_params

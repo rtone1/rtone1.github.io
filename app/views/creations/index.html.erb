@@ -2,10 +2,10 @@
     <h1>Rodrigo Torres</h1>
     <nav>
       <ul>
-        <li><a href="#development">Web Development</a><span>&nbsp; |</span></li>
-        <li><a href="#graphics">Graphics</a><span>&nbsp; |</span></li>
-        <li><a href="#top">About Me</a><span>&nbsp; |</span></li>
-        <li><a href="#container2">Contact Me</a></li>
+        <a href="#development"><li>Web Development<span>&nbsp; |</span></li></a>
+        <a href="#graphics"><li>Graphics<span>&nbsp; |</span></li></a>
+        <a href="#top"><li>About Me<span>&nbsp; |</span></li></a>
+        <a href="#container2"><li>Contact Me</li></a>
       </ul>
     </nav>
     <div class="hamIcon"></div>
@@ -49,13 +49,17 @@
 
     <div id="container2">
       <section class="contact">
-        <form class="contactForm" action="index.html" method="post">
+        <form class="contactForm" action="/api/message" method="post">
+          <%= token_tag %>
           <h3>Send me a message</h3>
           <hr>
-          <input type="text" name="name" placeholder="name..." required><br>
-          <input type="email" name="name" placeholder="email..." required>
-          <input type="phone" name="name" placeholder="phone..." required><br>
-          <textarea name="name" rows="8" cols="40" placeholder="message..."></textarea><br>
+          <label>Name</label>
+          <input type="text" name="message[name]" placeholder="name..." required><br>
+          <label>Email</label>
+          <input type="email" name="message[email]" placeholder="email..." required>
+          <label>Phone</label>
+          <input type="phone" name="message[phone]" placeholder="555555555" maxlength="10" required><br>
+          <textarea name="message[message]" maxlength="1000" placeholder="message..."></textarea><br>
           <input type="submit">
         </form>
       </section>
@@ -68,6 +72,14 @@
 
   <footer>
     <ul>
-      <a href="#"> <li>admin log-in</li> </a>
+    <li>admin log-in</li>
     </ul>
+    <%= form_tag('/session_log_in', method: :post) do %>
+      <%= label_tag :username %>
+      <%= text_field_tag :name %>
+      <%= label_tag 'password' %>
+      <%= password_field_tag :password %>
+      </br>
+      <%= submit_tag "Sign-In" %>
+    <% end %>
   </footer>

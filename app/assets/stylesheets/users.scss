@@ -1,3 +1,56 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.log-out{
+  display: inline-block;
+  float: right;
+  margin: 12px 20px;
+}
+.myName{
+  display: inline-block;
+}
+input[value=Log-Out]{
+  color: white;
+  border: 1px solid white;
+}
+input[value=Log-Out]:hover{
+  border: 1px solid lightgray;
+}
+
+// end of header for profile page===============================================
+.content-mail{
+  width: 90%;
+  height: 600px;
+  position: relative;
+  top: 80px;
+  margin: 0px auto 20px;
+  border-left: 2px solid gray;
+  border-right: 2px solid gray;
+}
+.mail{
+  width: 90%;
+  height: 600px;
+  position: relative;
+  top: 10px;
+}
+p{
+  width: 90%;
+  overflow: scroll;
+}
+.messages{
+  margin: 0px 20px 10px;
+}
+
+
+// responsive design for profile page===========================================
+@media (max-width: 500px){
+
+  input[value=Log-Out]{
+    color: black;
+    border: 1px solid gray;
+  }
+  input[value=Log-Out]:hover{
+    border: 1px solid lightgray;
+  }
+
+}

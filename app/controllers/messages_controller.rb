@@ -1,22 +1,20 @@
 class MessagesController < ApplicationController
 
-  def index
-    @messages = Message.all
-  end
-
   def createapi
-
+    Message.create(message_params)
+    redirect_to "/"
   end
 
   def destroy
-
+    Message.destroy(params[:id])
+    redirect_to "/profile"
   end
 
   private
 
   def message_params
 
-      require.params(:message).permit(:name, :email, :phone, :message)
+      params.require(:message).permit(:name, :email, :phone, :message)
 
   end
 
