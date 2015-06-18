@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   def profile
+    authenticate!
     @users = User.all
     @user = current_user
     @messages = Message.all

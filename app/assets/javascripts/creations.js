@@ -1,4 +1,8 @@
+var reader = new FileReader();
+var dataToUpload = {};
+
 $(document).ready(function(){
+
   $('.me').hide();
   $('.contact').hide();
 // responsive nav ===================
@@ -43,13 +47,8 @@ $(document).ready(function(){
         $('.contact').fadeOut('slow');
       }
 
-
-
     });
 // parallax scroll ==================================
-
-
-
      function parallax(){
        var scrolled = $(document).scrollTop() - 110;
        $('#container3').css('top', - scrolled / 2) + 'px';
@@ -65,7 +64,23 @@ $(document).ready(function(){
 
       };
 
-// mail function ===============================================================
+// file reader function ========================================================
+    $('#file').on('focusout', function() {
+
+      reader.onload = function (event) {
+        try {
+          console.log(event.target.result);
+            dataToUpload.file = event.target.result;
+        } catch (ex) {
+            throw new Error("Error Error");
+        }
+      }
+
+      var file = document.getElementById('file');
+
+      reader.readAsDataURL(file.files[0]);
+    });
+    imageFile = dataToUpload.file;
 
 
 

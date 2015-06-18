@@ -6,6 +6,7 @@ class MessagesController < ApplicationController
   end
 
   def destroy
+    authenticate!
     Message.destroy(params[:id])
     redirect_to "/profile"
   end

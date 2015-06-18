@@ -119,10 +119,22 @@ p{
   width: 100%;
   height: 700px;
   background-color: lightgray;
-  h1{
-    position: relative;
-    top: 20px;
-  }
+}
+.devwork{
+  width: 95%;
+  margin: 0px auto;
+  position: relative;
+  top: 25px;
+}
+.image{
+  width: 50%;
+  height: 50%;
+  float: left;
+}
+.devdiscription{
+  width: 50%;
+  float: left;
+
 }
 //Design work ==================================================================
 #graphics{
@@ -170,7 +182,8 @@ label{
 }
 input[type=text],
 input[type=email],
-input[type=phone],{
+input[type=phone],
+input[type=password]{
   width: 250px;
   height: 40px;
   padding: 10px;
@@ -210,6 +223,11 @@ input[type=submit]:focus,
 input[type=submit]:active{
 outline: 0;
 border: 1px solid #93B7CC;
+}
+textarea:focus,
+textarea:active{
+  outline: 0;
+  border: 1px solid #93B7CC;
 }
 
 .myImage{
