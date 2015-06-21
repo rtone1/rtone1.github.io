@@ -1,5 +1,9 @@
 var reader = new FileReader();
 var dataToUpload = {};
+var summary;
+var type;
+var link;
+var content;
 
 $(document).ready(function(){
 
@@ -65,25 +69,51 @@ $(document).ready(function(){
       };
 
 // file reader function ========================================================
-    $('#file').on('focusout', function() {
 
+    $('#file').on('focusout', function() {
       reader.onload = function (event) {
         try {
-          console.log(event.target.result);
             dataToUpload.file = event.target.result;
+            console.log(event.target.result);
         } catch (ex) {
             throw new Error("Error Error");
         }
       }
 
       var file = document.getElementById('file');
-
       reader.readAsDataURL(file.files[0]);
+
     });
-    imageFile = dataToUpload.file;
+
+    var imageData = dataToUpload.file;
+
+// posting work with ajax call ===============================================
+    $('#workForm').submit( function (event) {
+
+      summary = $('.category').val();
+      type = $('.title').val();
+      link = $('.link').val();
+      content = $('.description').val();
+      image = $('#file').val();
+      token = $( "#new_hand" ).val();
+
+      submitData();
+
+    });
 
 
+    function submitData(){
+      var imageData = dataToUpload.file;
+      $.ajax({
+        method: 'post',
+        url: '/api/creations',
+        dataType: 'json',
+        data: { creation: {category: summary, title: type, linkgithub: link, description: content, image: imageData }, authenticity_token: token },
+        success: function(data){
+          console.log("data added successfully!");
 
-
+        }
+      });
+    };
 
 }); // end of document.ready

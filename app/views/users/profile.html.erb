@@ -11,13 +11,13 @@
 <div class="content-mail">
 
   <div class="submit-form-work">
-    <form action="/api/creations" method="post">
+    <form id="workForm">
        <%= token_tag %>
-       <input class="category" type="text" name="creation[category]" placeholder="category...." required>
-       <input class="tile" type="text" name="creation[title]" placeholder="title...." required>
-       <input class="link" type="text" name="creation[linkgithub]" placeholder="github link...." required>
-       <textarea class="description" name="creation[description]" maxlength="1000" placeholder="description" required></textarea>
-       <input type="file" name="creation[image]">
+       <input class="category" type="text" placeholder="category...." required>
+       <input class="title" type="text"  placeholder="title...." required>
+       <input class="link" type="text" placeholder="github link...." required>
+       <textarea class="description"  maxlength="1000" placeholder="description" required></textarea>
+       <input  id="file" type="file">
        <input class="submit-work" type="submit" value="submit">
     </form>
   </div>
