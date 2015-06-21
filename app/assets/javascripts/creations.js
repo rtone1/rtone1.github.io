@@ -16,7 +16,7 @@ $(document).ready(function(){
       }
 
     });
-// add shadow to nav ================
+// add shadow to nav and scroll effects================
     $(window).scroll(function() {
 
       parallax();
@@ -38,7 +38,7 @@ $(document).ready(function(){
         parallaxME();
         $('.me').fadeIn(1000);
         $('.contact').fadeIn(1000);
-        if (scroll > 2073){
+        if (scroll > 2052){
           $('.contact').removeAttr('style');
           $('.me').removeAttr('style');
         }
