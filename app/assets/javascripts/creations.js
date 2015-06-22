@@ -30,6 +30,7 @@ $(document).ready(function(){
           $('header').addClass('shadow');
       } else {
           $('header').removeClass('shadow');
+
       }
 
       if (scroll > 100){
@@ -54,7 +55,7 @@ $(document).ready(function(){
     });
 // parallax scroll ==================================
      function parallax(){
-       var scrolled = $(document).scrollTop() - 110;
+       var scrolled = $(document).scrollTop() - 115;
        $('#container3').css('top', - scrolled / 2) + 'px';
      }
 
@@ -68,8 +69,69 @@ $(document).ready(function(){
 
       };
 
-// file reader function ========================================================
+// d3 data display =============================================================
+var div1=d3.select(document.getElementById('div1'));
+var div2=d3.select(document.getElementById('div2'));
 
+function onClick1() {
+    deselect();
+    div1.attr("class","selectedRadial");
+}
+
+function onClick2() {
+    deselect();
+    div2.attr("class","selectedRadial");
+}
+
+// function labelFunction(val,min,max) {
+//
+// }
+
+function deselect() {
+    div1.attr("class","radial");
+    div2.attr("class","radial");
+}
+
+var design = ['w','e'];
+
+function grabData(array){
+  array = design;
+  var information = $('#txt').val();
+  array.push(information);
+ // console.log(information);
+}
+
+function start() {
+
+  var info = design.length;
+  //console.log(info);
+  var code = [];
+  var info2 = code.length;
+
+    var rp1 = radialProgress(document.getElementById('div1'))
+            .label("CODE WORK")
+            .onClick(onClick1)
+            .diameter(220)
+            .value(60)
+            .render();
+
+    var rp1 = radialProgress(document.getElementById('div2'))
+            .label("DESIGN WORK")
+            .onClick(onClick2)
+            .diameter(220)
+            .value(40)
+            .render();
+
+}
+start();
+
+// $('#txt').focusout(grabData);
+// $('#enter').click(function(){
+//   $('#txt').val('');
+//   start();
+// });
+
+// file reader function ========================================================
     $('#file').on('focusout', function() {
       reader.onload = function (event) {
         try {

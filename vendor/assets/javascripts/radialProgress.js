@@ -1,13 +1,13 @@
 function radialProgress(parent) {
     var _data=null,
-        _duration= 1000,
+        _duration= 1600,
         _selection,
-        _margin = {top:0, right:0, bottom:30, left:0},
-        __width = 300,
-        __height = 300,
-        _diameter = 150,
+        _margin = {top:15, right:0, bottom:30, left:15},
+        __width = 250,
+        __height = 250,
+        _diameter = 170,
         _label="",
-        _fontSize=10;
+        _fontSize= 10;
 
 
     var _mouseClick;
@@ -16,7 +16,7 @@ function radialProgress(parent) {
         _minValue = 0,
         _maxValue = 100;
 
-    var  _currentArc= 0, _currentArc2= 0, _currentValue=0;
+    var  _currentArc= 10, _currentArc2= 0, _currentValue=0;
 
     var _arc = d3.svg.arc()
         .startAngle(0 * (Math.PI/180)); //just radians
@@ -88,8 +88,8 @@ function radialProgress(parent) {
             var label = svg.select(".labels").selectAll(".label").data(data);
             label.enter().append("text")
                 .attr("class","label")
-                .attr("y",_width/2+_fontSize/3)
-                .attr("x",_width/2)
+                .attr("y",_width/2+_fontSize/2)
+                .attr("x",_width/2.7)
                 .attr("cursor","pointer")
                 .attr("width",_width)
                 // .attr("x",(3*_fontSize/2))
@@ -165,7 +165,7 @@ function radialProgress(parent) {
         _width=_diameter - _margin.right - _margin.left - _margin.top - _margin.bottom;
         _height=_width;
         _fontSize=_width*.2;
-        _arc.outerRadius(_width/2);
+        _arc.outerRadius(_width/1.8);
         _arc.innerRadius(_width/2 * .85);
         _arc2.outerRadius(_width/2 * .85);
         _arc2.innerRadius(_width/2 * .85 - (_width/2 * .15));
