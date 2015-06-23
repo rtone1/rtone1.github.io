@@ -41,8 +41,8 @@ $(document).ready(function(){
 
       if (scroll > 1700){
         parallaxME();
-        $('.me').fadeIn(1000);
-        $('.contact').fadeIn(1000);
+        $('.me').fadeIn(500);
+        $('.contact').fadeIn(500);
         if (scroll > 2052){
           $('.contact').removeAttr('style');
           $('.me').removeAttr('style');
@@ -68,6 +68,13 @@ $(document).ready(function(){
           $('.contact').css('left', + scrolledY2) +'px';
 
       };
+// smoth scroll ================================================================
+$('a').click(function(){
+    $('html, body').animate({
+        scrollTop: $( $(this).attr('href') ).offset().top
+    }, 1000);
+    return false;
+});
 
 // d3 data display =============================================================
 var div1=d3.select(document.getElementById('div1'));

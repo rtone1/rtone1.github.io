@@ -1,7 +1,10 @@
 class CreationsController < ApplicationController
 
   def index
-    @creates = Creation.all
+    creates = Creation.all
+    @creates = creates.where(category: "code")
+    designs = Creation.all
+    @designs = designs.where(category: "design")
   end
 
   def createcreationapi

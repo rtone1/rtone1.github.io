@@ -23,7 +23,7 @@
       </section>
 
       <section class="guideTo">
-        <h5>Check out my portfolio</h5>
+        <a href="#development"> <h5>Check out my portfolio</h5> </a>
       </section>
     </div>
 
@@ -36,6 +36,9 @@
             <h3>
               As a Developer/Designer my portfolio consists of both design and development.
             </h3>
+            <h4> <%= link_to "download my resume", "resume.pdf", target: "_blank" %> </h4>
+
+            <hr>
           </section>
       </div>
     </div>
@@ -45,14 +48,19 @@
 
         <div class="devwork">
           <div class="workHolder">
-            <img class="image" src="http://chubbs.solutions/wp-content/uploads/2015/01/447243_Hi-Tech_1920x1080.jpg"/>
+            <% @creates.each do |c| %>
+
+            <img class="image" src=" <%= c.image %> "/>
             <section class="devdiscription">
-              <h1>Where-To</h1>
+              <h1> <%= c.title %> </h1>
+              <hr>
               <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                <%= c.description %>
               </p>
-              <a href="#">link to github</a>
+              <a href="<%= c.linkgithub %>">link to github</a>
             </section>
+
+            <% end %>
           </div>
         </div>
 
@@ -62,14 +70,16 @@
 
         <div class="devwork">
           <div class="workHolder">
-            <img class="image" src="http://chubbs.solutions/wp-content/uploads/2015/01/447243_Hi-Tech_1920x1080.jpg"/>
+            <% @designs.each do |d| %>
+            <img class="image" src=" <%= d.image %> "/>
             <section class="devdiscription">
-              <h1>Where-To</h1>
+              <h1> <%= d.title %> </h1>
+              <hr>
               <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                <%= d.description %>
               </p>
-              <a href="#">link to github</a>
             </section>
+            <% end %>
           </div>
         </div>
 
@@ -98,18 +108,25 @@
       </section>
     </div>
 
-  </div>
+    <footer>
 
-  <footer>
-    <ul>
-    <li>admin log-in</li>
-    </ul>
-    <%= form_tag('/session_log_in', method: :post) do %>
-      <%= label_tag :username %>
-      <%= text_field_tag :name %>
-      <%= label_tag 'password' %>
-      <%= password_field_tag :password %>
-      </br>
-      <%= submit_tag "Sign-In" %>
-    <% end %>
-  </footer>
+      <div class="footerInfo">
+        <ul class="footerul">
+          <a href="https://github.com/rtone1" target="_blank"><li class="git"></li></a>
+          <a href="https://www.linkedin.com/in/rodrigotorrescoronado" target="_blank"><li class="linkedin"></li></a>
+
+        <%= form_tag('/session_log_in', method: :post) do %>
+          <%= label_tag :username %>
+          <%= text_field_tag :name %>
+          <%= label_tag 'password' %>
+          <%= password_field_tag :password %>
+          <br>
+          <%= submit_tag "Sign-In" %>
+        <% end %>
+
+      </ul>
+      </div>
+
+    </footer>
+
+  </div>
