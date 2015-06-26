@@ -56,7 +56,7 @@ li{
 #container1{
   width: 100%;
   height: 600px;
-  background-image: url('chicagofixed.jpg');
+  background-image: url('/chicagofixed.jpg');
   background-size: cover;
   position: relative;
   top: 60px;
@@ -76,22 +76,22 @@ h1, h2, p{
 h1{
   top: 100px;
   left: 45px;
-  animation-name: lightSpeedIn;
-  animation-duration: 2s;
+  animation-name: lightSpeedIn 2s;
+  -webkit-animation: lightSpeedIn 2s;
 }
 h2{
   top: 105px;
   left: 160px;
-  animation-name: lightSpeedIn;
-  animation-duration: 4s;
+  animation-name: lightSpeedIn 4s;
+  -webkit-animation: lightSpeedIn 4s;
 }
 p{
   font-size: 22px;
   top: 120px;
   left: 190px;
-  width: 70%;
-  animation-name: lightSpeedIn;
-  animation-duration: 4s;
+  width: 60%;
+  animation-name: lightSpeedIn 4s;
+  -webkit-animation: lightSpeedIn 4s;
 }
 }
 .guideTo{
@@ -355,9 +355,9 @@ textarea:active{
   overflow: hidden;
 }
 .me{
-  width: 400px;
-  height: 400px;
-  background-image: url('me.png');
+  width: 405px;
+  height: 405px;
+  background-image: url('/me.png');
   background-size: cover;
   border-radius: 200px;
   margin-top: 105px;
@@ -365,6 +365,12 @@ textarea:active{
   right: 120px;
   top: 40px;
   z-index: 10;
+}
+.myshadow{
+  box-shadow: inset -2px -2px 6px -4px black;
+  height: 405px;
+  width: 405px;
+  border-radius: 200px;
 }
 // footer start=================================================================
 footer{
@@ -393,13 +399,13 @@ li{
 .git{
   width: 100px;
   height: 100px;
-  background-image: url('git.png');
+  background-image: url('/git.png');
   background-size: cover;
 }
 .linkedin{
   width: 90px;
   height: 90px;
-  background-image: url('linkedin.png');
+  background-image: url('/linkedin.png');
   background-size: cover;
 }
 form{
@@ -441,16 +447,24 @@ label{
     margin-bottom: 50px;
   }
   .me{
-    width: 350px;
-    height: 350px;
+    width: 355px;
+    height: 355px;
+  }
+  .myshadow{
+    width: 355px;
+    height: 355px;
   }
 
 }// end of 1050px media responsive
 
 @media (max-width: 900px){
   .me{
-    width: 320px;
-    height: 320px;
+    width: 325px;
+    height: 325px;
+  }
+  .myshadow{
+    width: 325px;
+    height: 325px;
   }
 
 }
@@ -473,7 +487,7 @@ label{
     top: 10px;
     right: 20px;
     float: right;
-    background-image: url('hambuger.png');
+    background-image: url('/hambuger.png');
     background-size: cover;
     background-position: center;
   }
@@ -562,15 +576,20 @@ label{
   }
 }
   .guideTo{
-    bottom: 100px;
+    bottom: 120px;
+    font-size: 20px;
   }
   .me{
-    width: 130px;
-    height: 130px;
+    width: 135px;
+    height: 135px;
     margin: 10px;
     right: 118px;
     top: 0px;
     z-index: 10;
+  }
+  .myshadow{
+    width: 135px;
+    height: 135px;
   }
   .contact {
     width: 97%;
@@ -591,6 +610,9 @@ label{
     width: 93%;
     height: 55%;
     margin-left: 10px;
+  }
+  #container2{
+    height: 710px;
   }
 
 }// end of 400px media responsive
